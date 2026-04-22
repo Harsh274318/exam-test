@@ -16,14 +16,14 @@ const Signup = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    try{
-      const response = await axios.post(`${API}user/signup`,{
-        name,email,password
+    try {
+      const response = await axios.post(`${API}user/signup`, {
+        name, email, password
       })
       console.log(response.data);
       toast.success("Successfully Signedup ✅")
       navigate("/login");
-    } catch(error) {
+    } catch (error) {
       console.error("Error signing up:", error);
       toast.error("Signup Failed ❌")
     }
@@ -58,13 +58,22 @@ const Signup = () => {
             className="w-full p-3 rounded-lg bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none"
           />
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 rounded-lg bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none"
-          />
+          <div className="relative w-full">
+            <input
+              type={flag ? "password" : "text"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 pr-10 rounded-lg bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none"
+            />
+
+            <span
+              onClick={() => setFlag(!flag)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-white"
+            >
+              {flag ? "🫣" : "😀"}
+            </span>
+          </div>
 
           <button
             type="submit"
@@ -77,7 +86,7 @@ const Signup = () => {
 
         <p className="text-gray-400 text-sm mt-4 text-center">
           Already have an account?{" "}
-          <span onClick={()=>navigate("/login")} className="text-white cursor-pointer hover:underline">
+          <span onClick={() => navigate("/login")} className="text-white cursor-pointer hover:underline">
             Login
           </span>
         </p>
