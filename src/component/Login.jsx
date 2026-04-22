@@ -4,25 +4,26 @@ import { useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
-const Login = ({setName}) => {
+const Login = ({ setName }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [flag, setFlag] = useState(false)
 
   const API = import.meta.env.VITE_API_URL
 
   const navigate = useNavigate();
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
-    try{
-      const response = await axios.post(`${API}user/login`,{
-        email,password
+    try {
+      const response = await axios.post(`${API}user/login`, {
+        email, password
       })
       setName(response.data.data.userName);
       localStorage.setItem("token", response.data.data.token);
       toast.success("Login Successful ✅");
       navigate("/");
-    } catch(error) {
+    } catch (error) {
       console.error("Error logging in:", error);
       toast.error("Login Failed ❌");
     }
@@ -76,7 +77,7 @@ const Login = ({setName}) => {
 
         <p className="text-gray-400 text-sm mt-4 text-center">
           Don’t have an account?{" "}
-          <span onClick={()=>navigate("/signup")} className="text-white cursor-pointer hover:underline">
+          <span onClick={() => navigate("/signup")} className="text-white cursor-pointer hover:underline">
             Signup
           </span>
         </p>
