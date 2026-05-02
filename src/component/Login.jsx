@@ -9,7 +9,6 @@ const Login = ({ setName }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [flag, setFlag] = useState(true)
-
   const API = import.meta.env.VITE_API_URL
 
   const navigate = useNavigate();
@@ -81,6 +80,11 @@ const Login = ({ setName }) => {
           <span onClick={() => navigate("/signup")} className="text-white cursor-pointer hover:underline">
             Signup
           </span>
+          <br />
+        <span onClick={() => navigate("/")} className="text-center text-white cursor-pointer hover:underline">
+          Home
+        </span>
+
         </p>
 
       </div>

@@ -38,7 +38,7 @@ const Dashboard = ({name}) => {
 
       {/* HEADER */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold">📊 {name} Dashboard</h1>
+        <h1 className="text-4xl font-bold">{name} Dashboard</h1>
         <p className="text-gray-400 mt-1">
           Track your performance and progress
         </p>

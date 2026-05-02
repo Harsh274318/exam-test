@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { generateTest } from "../redux/apiDataSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const [topic, setTopic] = useState("");
@@ -20,11 +21,13 @@ const Home = () => {
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(generateTest({topic, content, difficulty}));
-    navigate("/result",{
+    const token = JSON.parse(localStorage.getItem("token"))
+    if (!token) return toast.error("Login First");
+    if (!topic || !content || !difficulty) return toast.error("Fill all filed")
+    dispatch(generateTest({ topic, content, difficulty }));
+    navigate("/result", {
       state: topic
     })
     console.log(topic, content, difficulty);
@@ -126,11 +129,10 @@ const Home = () => {
               <div
                 onClick={() => handleDifficultyChange("easy")}
                 className={`p-4 rounded-xl border cursor-pointer text-center transition 
-      ${
-        difficulty === "easy"
-          ? "bg-green-500/20 border-green-400 text-green-300 shadow-lg"
-          : "bg-white/5 border-gray-600 hover:bg-white/10"
-      }`}
+      ${difficulty === "easy"
+                    ? "bg-green-500/20 border-green-400 text-green-300 shadow-lg"
+                    : "bg-white/5 border-gray-600 hover:bg-white/10"
+                  }`}
               >
                 😊 Easy
               </div>
@@ -139,11 +141,10 @@ const Home = () => {
               <div
                 onClick={() => handleDifficultyChange("medium")}
                 className={`p-4 rounded-xl border cursor-pointer text-center transition 
-      ${
-        difficulty === "medium"
-          ? "bg-yellow-500/20 border-yellow-400 text-yellow-300 shadow-lg"
-          : "bg-white/5 border-gray-600 hover:bg-white/10"
-      }`}
+      ${difficulty === "medium"
+                    ? "bg-yellow-500/20 border-yellow-400 text-yellow-300 shadow-lg"
+                    : "bg-white/5 border-gray-600 hover:bg-white/10"
+                  }`}
               >
                 ⚡ Medium
               </div>
@@ -152,11 +153,10 @@ const Home = () => {
               <div
                 onClick={() => handleDifficultyChange("hard")}
                 className={`p-4 rounded-xl border cursor-pointer text-center transition 
-      ${
-        difficulty === "hard"
-          ? "bg-red-500/20 border-red-400 text-red-300 shadow-lg"
-          : "bg-white/5 border-gray-600 hover:bg-white/10"
-      }`}
+      ${difficulty === "hard"
+                    ? "bg-red-500/20 border-red-400 text-red-300 shadow-lg"
+                    : "bg-white/5 border-gray-600 hover:bg-white/10"
+                  }`}
               >
                 🔥 Hard
               </div>

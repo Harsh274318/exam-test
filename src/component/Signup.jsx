@@ -91,6 +91,10 @@ const Signup = () => {
           <span onClick={() => navigate("/login")} className="text-white cursor-pointer hover:underline">
             Login
           </span>
+          <br />
+          <span onClick={() => navigate("/")} className="text-center text-white cursor-pointer hover:underline">
+            Home
+          </span>
         </p>
 
       </div>
