@@ -2,12 +2,13 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { IoEyeOutline } from "react-icons/io5";
+import { FaRegEyeSlash } from "react-icons/fa";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [flag, setFlag] = useState(false)
+  const [flag, setFlag] = useState(true)
 
 
 
@@ -22,11 +23,11 @@ const Signup = () => {
         name, email, password
       })
       console.log(response.data);
-      toast.success("Successfully Signedup ✅")
+      toast.success("Successfully Signedup")
       navigate("/login");
     } catch (error) {
       console.error("Error signing up:", error);
-      toast.error("Signup Failed ❌")
+      toast.error("Signup Failed")
     }
 
     console.log(name, email, password);
@@ -38,7 +39,7 @@ const Signup = () => {
       <div className="bg-white/5 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 w-full max-w-md shadow-2xl">
 
         <h2 className="text-3xl font-bold text-white mb-6 text-center">
-          Create Account 🚀
+          Create Account
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -72,7 +73,7 @@ const Signup = () => {
               onClick={() => setFlag(!flag)}
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-white"
             >
-              {flag ? "🫣" : "😀"}
+              {flag ? <FaRegEyeSlash /> : <IoEyeOutline />}
             </span>
           </div>
 

@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { toast } from "react-toastify";
+import { IoEyeOutline } from "react-icons/io5";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 const Login = ({ setName }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [flag, setFlag] = useState(false)
+  const [flag, setFlag] = useState(true)
 
   const API = import.meta.env.VITE_API_URL
 
@@ -21,11 +22,11 @@ const Login = ({ setName }) => {
       })
       setName(response.data.data.userName);
       localStorage.setItem("token", response.data.data.token);
-      toast.success("Login Successful ✅");
+      toast.success("Login Successful");
       navigate("/");
     } catch (error) {
       console.error("Error logging in:", error);
-      toast.error("Login Failed ❌");
+      toast.error("Login Failed");
     }
     console.log(email, password);
   };
@@ -36,7 +37,7 @@ const Login = ({ setName }) => {
       <div className="bg-white/5 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 w-full max-w-md shadow-2xl">
 
         <h2 className="text-3xl font-bold text-white mb-6 text-center">
-          Welcome Back 👋
+          Welcome Back
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -62,7 +63,7 @@ const Login = ({ setName }) => {
               onClick={() => setFlag(!flag)}
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-white"
             >
-              {flag ? "🫣" : "😀"}
+              {flag ? <FaRegEyeSlash /> : <IoEyeOutline />}
             </span>
           </div>
 
