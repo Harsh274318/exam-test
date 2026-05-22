@@ -1,2 +1,35 @@
 @import "tailwindcss";
 
+.loader-box {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(158, 158, 158, 0.311);
+  backdrop-filter: blur(3px);
+z-index: 9999999;
+}
+.loader {
+  height: 30px;
+  aspect-ratio: 10;
+ --loader-color: #cd3e3e;
+  --c: #0000 64%, var(--loader-color) 66% 98%, #0000 101%;
+
+  background:
+    radial-gradient(35% 146% at 50% 159%, var(--c)) 0 0,
+    radial-gradient(35% 146% at 50% -59%, var(--c)) 25% 100%;
+  background-size: calc(100% / 3) 50%;
+  background-repeat: repeat-x;
+  animation: l1 1s infinite linear;
+}
+@keyframes l1 {
+  to {
+    background-position:
+      50% 0,
+      75% 100%;
+  }
+}

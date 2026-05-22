@@ -15,11 +15,11 @@ export const generateTest = createAsyncThunk("api/generateTest",
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       })
-      toast.success("Test Generated ✅")
+      toast.success("Test Generated")
       return response.data
     }catch(error){
       console.error("Error generating test:", error);
-      toast.error("Somethinng went wrong ⚠️")
+      toast.error("Somethinng went wrong")
       throw error;
     }
   }

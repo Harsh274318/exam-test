@@ -15,27 +15,26 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const [name,setName]=useState("")
-  console.log(name)
+  const [name, setName] = useState("")
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
-      
+
       <Routes>
         <Route path='/' element={<>
-          <Navbar/>
-      <Home/>
-      <About/>
-      <Footer/>
-        </>}/>
-        <Route path='/result' element={<Result/>}/>
-        <Route path='/login' element={<Login setName={setName}/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/Result-evaluate' element={<Evaluate/>}/>
-        <Route path='/dashboard' element={<Dashboard name={name}/>}/>
-        <Route path='/details/:id' element={<Details/>}/>
+          <Navbar />
+          <Home />
+          <About />
+          <Footer />
+        </>} />
+        <Route path='/result' element={<Result />} />
+        <Route path='/login' element={<Login setName={setName} />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/Result-evaluate' element={<Evaluate />} />
+        <Route path='/dashboard' element={<Dashboard name={name} />} />
+        <Route path='/details/:id' element={<Details />} />
       </Routes>
 
-      <ToastContainer 
+      <ToastContainer
         position="top-right"
         autoClose={2000}
         theme="dark"

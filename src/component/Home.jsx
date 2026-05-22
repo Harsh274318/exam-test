@@ -30,7 +30,6 @@ const Home = () => {
     navigate("/result", {
       state: topic
     })
-    console.log(topic, content, difficulty);
   };
 
   return (
@@ -39,10 +38,10 @@ const Home = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-24">
         {/* LEFT */}
         <div>
-          <p className="text-gray-400 mb-3">✨ AI Powered Question Generator</p>
+          <p className="text-gray-400 mb-3">AI Powered Question Generator</p>
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-            Create Question Papers <br /> in Seconds ⚡
+            Create Question Papers <br /> in Seconds 
           </h1>
 
           <p className="text-gray-400 mb-8 text-lg">
@@ -54,7 +53,7 @@ const Home = () => {
             onClick={scrollToForm}
             className="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl text-lg transition shadow-lg hover:shadow-xl"
           >
-            🚀 Start Generating
+            Start Generating
           </button>
         </div>
 
@@ -73,19 +72,19 @@ const Home = () => {
       {/* FEATURES */}
       <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mb-24 text-center">
         <div className="bg-white/5 p-6 rounded-2xl border border-gray-700 hover:bg-white/10 transition">
-          <h3 className="text-lg font-semibold mb-2">🤖 AI Generated</h3>
+          <h3 className="text-lg font-semibold mb-2">AI Generated</h3>
           <p className="text-gray-400 text-sm">
             Smart questions based on your content
           </p>
         </div>
 
         <div className="bg-white/5 p-6 rounded-2xl border border-gray-700 hover:bg-white/10 transition">
-          <h3 className="text-lg font-semibold mb-2">⚡ Fast Output</h3>
+          <h3 className="text-lg font-semibold mb-2">Fast Output</h3>
           <p className="text-gray-400 text-sm">Generate papers instantly</p>
         </div>
 
         <div className="bg-white/5 p-6 rounded-2xl border border-gray-700 hover:bg-white/10 transition">
-          <h3 className="text-lg font-semibold mb-2">📄 Multiple Formats</h3>
+          <h3 className="text-lg font-semibold mb-2">Multiple Formats</h3>
           <p className="text-gray-400 text-sm">
             MCQs, short & reasoning questions
           </p>
@@ -134,7 +133,7 @@ const Home = () => {
                     : "bg-white/5 border-gray-600 hover:bg-white/10"
                   }`}
               >
-                😊 Easy
+                Easy
               </div>
 
               {/* Medium */}
@@ -146,7 +145,7 @@ const Home = () => {
                     : "bg-white/5 border-gray-600 hover:bg-white/10"
                   }`}
               >
-                ⚡ Medium
+                Medium
               </div>
 
               {/* Hard */}
@@ -158,7 +157,7 @@ const Home = () => {
                     : "bg-white/5 border-gray-600 hover:bg-white/10"
                   }`}
               >
-                🔥 Hard
+                Hard
               </div>
             </div>
           </div>

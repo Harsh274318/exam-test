@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const About = () => {
   return (
@@ -17,59 +17,51 @@ const About = () => {
       {/* RIGHT CONTENT */}
       <div>
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Smarter Way to Create Question Papers 🚀
+          Smarter Way to Create Question Papers
         </h2>
 
         <p className="text-gray-400 mb-6 leading-relaxed text-lg">
-          TestForge is built to make your work faster, smarter, and more efficient.
-          Instead of spending hours creating question papers manually, you can now
-          generate structured and high-quality questions in just a few seconds.
+          TestForge is built to make your work faster, smarter, and more
+          efficient. Instead of spending hours creating question papers
+          manually, you can now generate structured and high-quality questions
+          in just a few seconds.
         </p>
 
         <p className="text-gray-400 mb-8 leading-relaxed">
-          Whether you're a student preparing for exams or a teacher designing tests,
-          TestForge helps you save time, reduce effort, and focus on what really matters —
-          learning and teaching.
+          Whether you're a student preparing for exams or a teacher designing
+          tests, TestForge helps you save time, reduce effort, and focus on what
+          really matters — learning and teaching.
         </p>
 
         {/* FEATURES */}
         <div className="grid sm:grid-cols-2 gap-4">
-
           <div className="flex items-start gap-3">
-            <span>⚡</span>
             <p className="text-gray-300">Lightning fast generation</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span>🧠</span>
             <p className="text-gray-300">AI understands your content</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span>📄</span>
             <p className="text-gray-300">Multiple question formats</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span>🎯</span>
             <p className="text-gray-300">Accurate & topic-focused</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span>⏳</span>
             <p className="text-gray-300">Saves hours of manual work</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span>🚀</span>
             <p className="text-gray-300">Boosts productivity</p>
           </div>
-
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
