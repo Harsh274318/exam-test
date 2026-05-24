@@ -23,7 +23,7 @@ const Home = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const token = JSON.parse(localStorage.getItem("token"))
+    const token = localStorage.getItem("token")
     if (!token) return toast.error("Login First");
     if (!topic || !content || !difficulty) return toast.error("Fill all filed")
     dispatch(generateTest({ topic, content, difficulty }));
@@ -41,7 +41,7 @@ const Home = () => {
           <p className="text-gray-400 mb-3">AI Powered Question Generator</p>
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-            Create Question Papers <br /> in Seconds 
+            Create Question Papers <br /> in Seconds
           </h1>
 
           <p className="text-gray-400 mb-8 text-lg">
